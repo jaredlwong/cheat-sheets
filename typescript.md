@@ -3,6 +3,27 @@ void, never, null,
 
 index signatures
 
+## Structural Typing
+```typescript
+class Zebra {
+ trot() {
+ // ...
+ }
+}
+class Poodle {
+ trot() {
+ // ...
+ }
+}
+function ambleAround(animal: Zebra) {
+ animal.trot()
+}
+let zebra = new Zebra
+let poodle = new Poodle
+ambleAround(zebra) // OK
+ambleAround(poodle) // OK
+```
+
 ## Union and Intersection Types
 Intersection types combine multiple types using the `&` operator. Unions types combine multiple types using the `|` operator. Intersection types can access all members. Union types can only access common members.
 
