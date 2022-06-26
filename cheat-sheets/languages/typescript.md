@@ -1,3 +1,12 @@
+## Escape Hatches
+```typescript
+let a: {b: string} | undefined
+a!    // {b: string}: typescript will drop the undefined without checking
+a?.b  // string | undefined: typescript will get b if a !== undefined
+```
+
+
+
 structural typing
 void, never, null, 
 
