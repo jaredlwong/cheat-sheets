@@ -23,7 +23,7 @@ Accessing the key space
     ./etcdctl get <key path> -w=json            # Output in JSON with metadata
     
     # Get all keys and values
-    ./etcdctl get --prefix --keys-only '' | grep . | xargs -L1 ./etcdctl get  
+    ./etcdctl get --prefix ''
     
     etcdctl get <key path>                      # Get key details
     etcdctl get <key path> --print-value-only   # Get key value only
