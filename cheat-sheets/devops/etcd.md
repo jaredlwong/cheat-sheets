@@ -20,12 +20,13 @@ Accessing the key space
     etcdctl get / --prefix --keys-only          # Get top-level keys
     etcdctl get / --prefix                      # Get top-level keys and values
     ./etcdctl get --prefix --keys-only ''       # Get all keys
+    ./etcdctl get <key path> -w=json            # Output in JSON with metadata
     
     etcdctl get <key path>                      # Get key details
     etcdctl get <key path> --print-value-only   # Get key value only
     etcdctl get <key path> --rev=<number>       # Get older revision of a key
     etcdctl -o extended get <key path>          # Get key and metadata
-    etcdctl get <key path> -w=json              # Output in JSON with metadata
+
     
 Batch queries
     
