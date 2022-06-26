@@ -1,5 +1,13 @@
 This cheat sheet is for etcd v3 only!
 
+- The store’s logical view is a flat binary key space.
+- The key space has a lexically sorted index on byte string keys so range queries are inexpensive.
+- The key space maintains multiple revisions.
+- Creating a key increments the version of that key, starting at 1 if the key does not exist at the current revision.
+- Deleting a key generates a key tombstone, concluding the key’s current generation by resetting its version to 0.
+- Each modification of a key increments its version; so, versions are monotonically increasing within a key’s generation.
+- Once a compaction happens, any generation ended before the compaction revision will be removed, and values set before the compaction revision except the latest one will be removed.
+
 ## CLI Commands
 
 Cluster infos
@@ -11,7 +19,7 @@ Accessing the key space
 
     etcdctl get / --prefix --keys-only          # Get top-level keys
     etcdctl get / --prefix                      # Get top-level keys and values
-    etcdctl get / --prefix --keys-only --recursive  # Get full tree
+    ./etcdctl get --prefix --keys-only ''       # Get all keys
     
     etcdctl get <key path>                      # Get key details
     etcdctl get <key path> --print-value-only   # Get key value only
