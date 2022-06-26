@@ -1,4 +1,4 @@
-This cheat sheet is for etcd v3 only!
+https://etcd.io/docs/v3.5/learning/data_model/
 
 - The store’s logical view is a flat binary key space.
 - The key space has a lexically sorted index on byte string keys so range queries are inexpensive.
