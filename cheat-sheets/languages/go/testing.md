@@ -5,15 +5,12 @@ import "testing"
 
 func TestFibonacci(t *testing.T) {
 	parameters := []struct {
+		name string
 		input, expected int
 	}{
-		{0, 0},
-		{1, 1},
-		{2, 1},
-		{3, 2},
-		{4, 3},
-		{5, 5},
-		{6, 8},
+		{"golden path test", 0, 0},
+		{"exceptional test a", 1, 1},
+		{"exceptional test b" 2, 1},
 	}
 
 	for i := range parameters {
