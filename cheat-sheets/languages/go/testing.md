@@ -1,4 +1,19 @@
-# Parameterized Tests
+## Libraries
+```go
+import (
+	"testing"
+
+	"github.com/stretchr/testify/require"
+)
+
+func TestFibonacci(t *testing.T) {
+	expected := 0
+	actual := compute(0)
+	require.Equal(t, expected, actual)
+}
+
+```
+## Parameterized Tests
 
 ```go
 import "testing"
