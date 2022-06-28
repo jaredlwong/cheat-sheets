@@ -9,10 +9,24 @@ const products = productIds.map(getProduct).filter(defined)
 ```
 
 ## Conditionally Add Element to Object
+https://amberley.dev/blog/2020-09-07-conditionally-add-to-array-or-obj/
 ```typescript
-const a = {
-   ...(someCondition && {b: 5})
-}
+const trueCondition = true;
+const falseCondition = false;
+
+const obj = {
+  ...(trueCondition && { dogs: "woof" }),
+  ...(falseCondition && { cats: "meow" }),
+};
+
+// { dogs: 'woof' }
+
+const arr = [
+  ...(trueCondition ? ["dog"] : []),
+  ...(falseCondition ? ["cat"] : [])
+];
+
+// ['dog']
 ```
 
 ## Escape Hatches
