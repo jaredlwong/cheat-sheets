@@ -1,3 +1,10 @@
+## Conditionally Add Element to Object
+```typescript
+const a = {
+   ...(someCondition && {b: 5})
+}
+```
+
 ## Escape Hatches
 ```typescript
 let a: {b: string} | undefined
