@@ -1,3 +1,13 @@
+## Filter undefined from array, safely... (User defined type guard)
+```typescript
+const isProduct = (item: Product | undefined): item is Product => {
+  return !!item
+}
+
+const productIds = [123, 456, 789]
+const products = productIds.map(getProduct).filter(isProduct)
+```
+
 ## Conditionally Add Element to Object
 ```typescript
 const a = {
