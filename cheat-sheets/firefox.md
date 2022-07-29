@@ -4,16 +4,17 @@ toolkit.legacyUserProfileCustomizations.stylesheets = true
 # about:profiles
 Enable userChrome.css support in Fx v69+
 
-Open about:support
+1. Open about:support
+2. Click on "Profile Folder" -> "Open Folder"
+3. Create a sub-folder named "chrome"
+4. Create a file named "userChrome.css"
 
-Click on "Profile Folder" -> "Open Folder"
+# hide tab bar when using sidebery/tree style tabe
+```css
+#tabbrowser-tabs {
+  visibility: collapse !important;
+}
+```
 
-Create a sub-folder named "chrome"
-
-Change into the new folder
-
-Create a file named "userChrome.css"
-
-Add some rules
-
-Restart Firefox
+# Restart Firefox
+about:profiles
